@@ -15,6 +15,7 @@
 		10D4A7DA22C8716700855CE8 /* CalendarScrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A7D922C8716700855CE8 /* CalendarScrollTests.swift */; };
 		10D4A7E522C8716700855CE8 /* CalendarScrollUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A7E422C8716700855CE8 /* CalendarScrollUITests.swift */; };
 		10D4A7F722C8885000855CE8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 10D4A7F622C8885000855CE8 /* .swiftlint.yml */; };
+		10D4A7F922C8E0EE00855CE8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A7F822C8E0EE00855CE8 /* CollectionViewCell.swift */; };
 		23567733603DE2892D92CFD3 /* Pods_CalendarScrollUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853A12A128DF19E1DD6A65C6 /* Pods_CalendarScrollUITests.framework */; };
 		685AE13B6D291419968B3E4D /* Pods_CalendarScrollTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049617F6FB4B5C99BF0089FE /* Pods_CalendarScrollTests.framework */; };
 		7D1E0C39C2A64D8080AE41BC /* Pods_CalendarScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC5EBC392DBEBA6948BF290 /* Pods_CalendarScroll.framework */; };
@@ -54,6 +55,7 @@
 		10D4A7E422C8716700855CE8 /* CalendarScrollUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScrollUITests.swift; sourceTree = "<group>"; };
 		10D4A7E622C8716700855CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D4A7F622C8885000855CE8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		10D4A7F822C8E0EE00855CE8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		4C2EDE7C7F005D06A71661E6 /* Pods-CalendarScrollTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarScrollTests.release.xcconfig"; path = "Target Support Files/Pods-CalendarScrollTests/Pods-CalendarScrollTests.release.xcconfig"; sourceTree = "<group>"; };
 		5DC5EBC392DBEBA6948BF290 /* Pods_CalendarScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalendarScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BFEEB1F7C7C2314F8A08787 /* Pods-CalendarScrollTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarScrollTests.debug.xcconfig"; path = "Target Support Files/Pods-CalendarScrollTests/Pods-CalendarScrollTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				10D4A7C422C8716600855CE8 /* AppDelegate.swift */,
 				10D4A7C622C8716600855CE8 /* ViewController.swift */,
+				10D4A7F822C8E0EE00855CE8 /* CollectionViewCell.swift */,
 				10D4A7C822C8716600855CE8 /* Main.storyboard */,
 				10D4A7CB22C8716700855CE8 /* Assets.xcassets */,
 				10D4A7CD22C8716700855CE8 /* LaunchScreen.storyboard */,
@@ -392,6 +395,7 @@
 			files = (
 				10D4A7C722C8716600855CE8 /* ViewController.swift in Sources */,
 				10D4A7C522C8716600855CE8 /* AppDelegate.swift in Sources */,
+				10D4A7F922C8E0EE00855CE8 /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,8 +571,9 @@
 			baseConfigurationReference = F0D68AC5C97DC5470C4E9037 /* Pods-CalendarScroll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D65C9K34GM;
 				INFOPLIST_FILE = CalendarScroll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -587,8 +592,9 @@
 			baseConfigurationReference = B6AC97AD27E3F0CA4E6E8EA5 /* Pods-CalendarScroll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D65C9K34GM;
 				INFOPLIST_FILE = CalendarScroll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
