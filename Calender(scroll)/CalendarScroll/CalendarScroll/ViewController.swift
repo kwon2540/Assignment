@@ -17,17 +17,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-
+        collectionView.decelerationRate = .init(rawValue: .zero)
     }
 
     private func scrollingCorrection() {
         let x =  Int(collectionView.contentOffset.x)
         let x70 = Int(x / cellWidth) * cellWidth
         if x % cellWidth > cellWidth / 2 {
-            collectionView.setContentOffset(CGPoint(x: x70 + cellWidth, y: 0), animated: false)
+            collectionView.setContentOffset(CGPoint(x: x70 + cellWidth, y: 0), animated: true)
         } else {
-            collectionView.setContentOffset(CGPoint(x: x70, y: 0), animated: false)
+            collectionView.setContentOffset(CGPoint(x: x70, y: 0), animated: true)
         }
+    }
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        scrollingCorrection()
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollingCorrection()
     }
 
 }
@@ -48,14 +56,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.label.text = "\(indexPath.section)"
         cellWidth = Int(cell.frame.width)
         return cell
-    }
-
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        scrollingCorrection()
-    }
-
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        scrollingCorrection()
     }
 
 }
