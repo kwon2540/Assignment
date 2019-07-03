@@ -22,22 +22,14 @@ class ViewController: UIViewController {
 
     private func scrollingCorrection() {
         let x =  Int(collectionView.contentOffset.x)
-        let x70 = Int(x / cellWidth) * cellWidth
+        let correctionX = Int(x / cellWidth) * cellWidth
         if x % cellWidth > cellWidth / 2 {
-            collectionView.setContentOffset(CGPoint(x: x70 + cellWidth, y: 0), animated: true)
+            collectionView.setContentOffset(CGPoint(x: correctionX + cellWidth, y: 0), animated: true)
         } else {
-            collectionView.setContentOffset(CGPoint(x: x70, y: 0), animated: true)
+            collectionView.setContentOffset(CGPoint(x: correctionX, y: 0), animated: true)
         }
     }
-
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        scrollingCorrection()
-    }
-
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        scrollingCorrection()
-    }
-
+    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -56,6 +48,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.label.text = "\(indexPath.section)"
         cellWidth = Int(cell.frame.width)
         return cell
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        scrollingCorrection()
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollingCorrection()
     }
 
 }
