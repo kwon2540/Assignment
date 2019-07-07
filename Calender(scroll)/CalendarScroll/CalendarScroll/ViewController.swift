@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
-    private var zeroCell: CollectionViewCell?
     private var cellWidth: Int!
 
     override func viewDidLoad() {
