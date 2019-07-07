@@ -9,36 +9,60 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var collectionView: UICollectionView! {
+    @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
-            collectionView.delegate = self
             collectionView.dataSource = self
         }
     }
     
+    private var numbers: [Int] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        for number in 1...50 {
+            numbers.append(number)
+        }
+        
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.moveCell))
+        collectionView.addGestureRecognizer(longPressGesture)
+    }
+    
+    @objc func moveCell(gesture: UILongPressGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            guard let selectedCell = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) else { break }
+            collectionView.beginInteractiveMovementForItem(at: selectedCell)
+        case .changed:
+            collectionView.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view))
+        case .ended:
+            collectionView.endInteractiveMovement()
+        default:
+            collectionView.cancelInteractiveMovement()
+        }
     }
 
 
-}
-
-extension ViewController: UICollectionViewDelegate {
-    
 }
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return numbers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-        cell.label.text = "\(indexPath.item)"
+        cell.label.text = "\(numbers[indexPath.item])"
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
+        if numbers[indexPath.item] % 2 == 0 {
+            cell.backgroundColor = .lightGray
+        }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let number = numbers.remove(at: sourceIndexPath.item)
+        numbers.insert(number, at: destinationIndexPath.item)
     }
     
     
