@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func moveCell(gesture: UILongPressGestureRecognizer) {
+    @objc private func moveCell(gesture: UILongPressGestureRecognizer) {
         switch gesture.state {
         case .began:
             guard let selectedCell = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) else { break }
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func reset(_ sender: Any) {
+    @IBAction private func reset(_ sender: Any) {
         createData()
         collectionView.reloadData()
     }
