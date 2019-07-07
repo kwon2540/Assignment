@@ -19,12 +19,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addGesture()
+        createData()
+    }
+    
+    private func addGesture() {
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.moveCell))
+        collectionView.addGestureRecognizer(longPressGesture)
+    }
+    
+    private func createData() {
+        numbers.removeAll()
         for number in 1...50 {
             numbers.append(number)
         }
-        
-        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.moveCell))
-        collectionView.addGestureRecognizer(longPressGesture)
     }
     
     @objc func moveCell(gesture: UILongPressGestureRecognizer) {
@@ -41,7 +49,11 @@ class ViewController: UIViewController {
         }
     }
 
-
+    @IBAction func reset(_ sender: Any) {
+        createData()
+        collectionView.reloadData()
+    }
+    
 }
 
 extension ViewController: UICollectionViewDataSource {

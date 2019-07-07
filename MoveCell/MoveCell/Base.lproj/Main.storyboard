@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AOY-Io-fVI">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="VCj-jy-6Kr">
                                     <size key="itemSize" width="75" height="75"/>
@@ -53,13 +53,26 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dss-xX-g4M">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lAZ-Hb-byb"/>
+                                </constraints>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rj0-7i-5TJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dss-xX-g4M" firstAttribute="top" secondItem="AOY-Io-fVI" secondAttribute="bottom" id="92D-M0-VbT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AOY-Io-fVI" secondAttribute="trailing" id="A7v-wE-1e0"/>
-                            <constraint firstItem="AOY-Io-fVI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CWY-Fd-jj6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AOY-Io-fVI" secondAttribute="bottom" id="Zya-ea-7xD"/>
+                            <constraint firstItem="AOY-Io-fVI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K4c-1s-4dK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dss-xX-g4M" secondAttribute="bottom" id="M8U-jd-nln"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dss-xX-g4M" secondAttribute="trailing" id="PDN-kI-M15"/>
                             <constraint firstItem="AOY-Io-fVI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fbO-jJ-aox"/>
+                            <constraint firstItem="dss-xX-g4M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g8g-Qc-hI8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -69,6 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
     </scenes>
 </document>
