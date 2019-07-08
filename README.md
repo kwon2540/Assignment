@@ -6,3 +6,5 @@
 https://blog.usejournal.com/adopting-drag-and-drop-in-uitableview-9575dea3cf0a
 
 https://qiita.com/eKushida/items/78d53d365bb69c7e7e0e
+
+https://hackernoon.com/how-to-drag-drop-uicollectionview-cells-by-utilizing-dropdelegate-and-dragdelegate-6e3512327202
