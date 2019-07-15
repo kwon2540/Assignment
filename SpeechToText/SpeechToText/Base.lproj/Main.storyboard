@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeechToText" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fy-KE-GsQ">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faZ-ai-gPV">
+                                        <rect key="frame" x="150" y="150" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.20119938380281691" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="5uN-Lu-1a0"/>
+                                    <constraint firstAttribute="height" constant="300" id="6dM-y9-tSa"/>
+                                    <constraint firstItem="faZ-ai-gPV" firstAttribute="centerY" secondItem="6fy-KE-GsQ" secondAttribute="centerY" id="Ogx-pD-xpF"/>
+                                    <constraint firstItem="faZ-ai-gPV" firstAttribute="width" relation="lessThanOrEqual" secondItem="6fy-KE-GsQ" secondAttribute="width" id="lPr-Rh-w8w"/>
+                                    <constraint firstItem="faZ-ai-gPV" firstAttribute="centerX" secondItem="6fy-KE-GsQ" secondAttribute="centerX" id="ydc-7X-J09"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7K-gT-ZcG">
+                                <rect key="frame" x="182" y="762" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="i9f-ka-dkh"/>
+                                    <constraint firstAttribute="width" constant="50" id="prL-T0-oQB"/>
+                                </constraints>
+                                <state key="normal" image="off"/>
+                                <connections>
+                                    <action selector="micButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c6p-Ex-pcZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6fy-KE-GsQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8T6-xU-vpU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p7K-gT-ZcG" secondAttribute="bottom" constant="50" id="WuS-NV-rUN"/>
+                            <constraint firstItem="6fy-KE-GsQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="de6-c3-Q5z"/>
+                            <constraint firstItem="p7K-gT-ZcG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nAD-UQ-xKy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="p7K-gT-ZcG" id="D1y-1n-jcp"/>
+                        <outlet property="label" destination="faZ-ai-gPV" id="Hwd-9v-f1n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="off" width="512" height="512"/>
+    </resources>
+</document>
