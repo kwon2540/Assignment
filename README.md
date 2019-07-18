@@ -8,3 +8,6 @@
 네번째 - 음성변환 (텍스트를 음성으로 변환)
 
 다섯번째 - 세로 슬라이더를 이용한 수치 증가 감소 기능
+
+
+https://www.youtube.com/watch?v=w5Qmie-GbiA
